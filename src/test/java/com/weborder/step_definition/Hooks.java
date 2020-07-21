@@ -10,12 +10,8 @@ public class Hooks {
     public void setUp(){
        Driver.getDriver().get ( ConfigurationReader.getProperty ( "url" ) );
     }
-
-
-
     @After()
     public void tearDown(){
-
         Driver.getDriver ().close ();
     }
 }

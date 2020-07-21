@@ -10,17 +10,23 @@ public class ConfigurationReader {
 
     static {
         try {
-            FileInputStream fileInputStream = new FileInputStream ("configuration.properties");
-            configFile = new Properties ();
-            configFile.load(fileInputStream);
-            fileInputStream.close();
-        } catch (IOException e) {
+            //location of properties file
+            String path = System.getProperty("user.dir")+"/configuration.properties";
+            //get that file as a stream
+            FileInputStream input = new FileInputStream(path);
+            //create object of Properties class
+            configFile = new Properties();
+            //load properties file into Properties object
+            configFile.load(input);
+            //close the input s
+            input.close();
+        } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException ("Failed to load properties file!");
+            throw new RuntimeException("Failed to load properties file!");
         }
-    }
 
-    public static String getProperty(String key) {
-        return configFile.getProperty(key);
+    }
+    public static String getProperty(String keyName) {
+        return configFile.getProperty(keyName);
     }
 }
