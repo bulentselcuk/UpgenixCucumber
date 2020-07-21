@@ -14,11 +14,11 @@ public class Login_Step_Definition {
     public void user_is_on_the_login_page() {
         System.out.println("Open login page");
         String env = "url";
-        if (System.getProperty("env") != null) {
-            env = System.getProperty("env");
-        }
+//        if (System.getProperty("env") != null) {
+//            env = System.getProperty("env");
+//        }
         String URL = ConfigurationReader.getProperty(env);
-        System.out.println("URL :: " + URL);
+        System.out.println("URL : " + URL);
         Driver.getDriver().get(URL);
     }
 
