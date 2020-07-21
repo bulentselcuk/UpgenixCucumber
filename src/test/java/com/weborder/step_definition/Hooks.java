@@ -11,8 +11,9 @@ public class Hooks {
 
     @Before
     public void setUp(){
-        System.out.println ("Test Set Up");
-       Driver.getDriver().get ( ConfigurationReader.getProperty ( "url" ) );
+        System.out.println("Test setup");
+        Driver.getDriver().manage().window().maximize();
+
     }
     @After
     public void tearDown(Scenario scenario) {
@@ -25,5 +26,6 @@ public class Hooks {
         }
         System.out.println("Test Clean Up");
         Driver.closeDriver();
+
     }
 }
