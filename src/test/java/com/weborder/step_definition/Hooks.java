@@ -13,6 +13,9 @@ public class Hooks {
     public void setUp(){
         System.out.println("Test setup");
         Driver.getDriver().manage().window().maximize();
+        String URL = ConfigurationReader.getProperty("qa1");
+        System.out.println("URL : " + URL);
+        Driver.getDriver().get(URL);
 
     }
     @After
