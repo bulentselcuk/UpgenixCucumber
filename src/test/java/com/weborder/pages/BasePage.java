@@ -16,6 +16,7 @@ public abstract class BasePage {
     @FindBy(tagName = "h1")
     public WebElement pageLogo;
 
+
 //    @FindBy(tagName = "h2")
 //    public WebElement pageSubtitle;
 

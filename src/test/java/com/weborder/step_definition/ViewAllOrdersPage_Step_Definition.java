@@ -16,6 +16,7 @@ public class ViewAllOrdersPage_Step_Definition {
     public void user_is_on_the_login_page_and_acces_with_credential() {
 
         loginPage.login ();
+
     }
 
     @When("User should click CheckAll button")
