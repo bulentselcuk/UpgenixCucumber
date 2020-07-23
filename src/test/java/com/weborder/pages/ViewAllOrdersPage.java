@@ -3,7 +3,7 @@ package com.weborder.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ViewAllOrdersPage {
+public class ViewAllOrdersPage extends BasePage{
     @FindBy(id="ctl00_MainContent_btnCheckAll")
     public WebElement checkAll;
     @FindBy(xpath="//a[@id='ctl00_MainContent_btnUncheckAll']")

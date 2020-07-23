@@ -10,10 +10,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class ViewAllOrdersPage_Step_Definition {
+    LoginPage loginPage=new LoginPage ();
 
     @Given("User is on the login page and acces with credential.")
     public void user_is_on_the_login_page_and_acces_with_credential() {
-        LoginPage loginPage=new LoginPage ();
+
         loginPage.login ();
     }
 
@@ -41,7 +42,7 @@ public class ViewAllOrdersPage_Step_Definition {
     @When("User should fill Product Information and click Calculate.")
     public void user_should_fill_Product_Information_and_click_Calculate() {
         ViewAllOrdersPage viewAllOrdersPage=new ViewAllOrdersPage ();
-        Select s1=new Select (viewAllOrdersPage.product);
+        Select s1=new Select ( viewAllOrdersPage.product );
         s1.selectByVisibleText ( "FamilyAlbum" );
         viewAllOrdersPage.quantity.clear ();
         viewAllOrdersPage.quantity.sendKeys ( "3" );
@@ -56,7 +57,7 @@ public class ViewAllOrdersPage_Step_Definition {
         viewAllOrdersPage.customerName.sendKeys ( "Michael Moore" );
         viewAllOrdersPage.street.clear ();
         viewAllOrdersPage.street.sendKeys ( "1923, Louetta Dr" );
-        viewAllOrdersPage. city.clear ();
+        viewAllOrdersPage.city.clear ();
         viewAllOrdersPage.city.sendKeys ( "Austin" );
         viewAllOrdersPage.zip.clear ();
         viewAllOrdersPage.zip.sendKeys ( "77573" );
