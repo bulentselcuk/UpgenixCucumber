@@ -6,11 +6,14 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 
 public class Hooks {
 
+
     @Before
     public void setUp(){
+
         System.out.println("Test setup");
         Driver.getDriver().manage().window().maximize();
         String URL = ConfigurationReader.getProperty("qa1");
