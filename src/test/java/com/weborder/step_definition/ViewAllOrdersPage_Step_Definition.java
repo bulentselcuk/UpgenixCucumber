@@ -11,11 +11,13 @@ import org.openqa.selenium.support.ui.Select;
 
 public class ViewAllOrdersPage_Step_Definition {
     LoginPage loginPage=new LoginPage ();
+    ViewAllOrdersPage viewAllOrdersPage = new ViewAllOrdersPage();
 
     @Given("User is on the login page and acces with credential.")
     public void user_is_on_the_login_page_and_acces_with_credential() {
 
         loginPage.login ();
+        viewAllOrdersPage.ViewAllOrder.click ();
 
     }
 
@@ -23,26 +25,26 @@ public class ViewAllOrdersPage_Step_Definition {
     public void user_should_click_CheckAll_button() {
         LoginPage loginPage=new LoginPage ();
         BrowserUtilities.wait ( 3 );
-        ViewAllOrdersPage viewAllOrdersPage=new ViewAllOrdersPage ();
+
         viewAllOrdersPage.checkAll.click ();
 
     }
 
     @When("User should click UncheckAll button")
     public void user_should_click_UncheckAll_button() {
-        ViewAllOrdersPage viewAllOrdersPage=new ViewAllOrdersPage ();
+
         viewAllOrdersPage.unceheckAll.click ();
     }
 
     @When("User should click FirstEdit button")
     public void user_should_click_FirstEdit_button() {
-        ViewAllOrdersPage viewAllOrdersPage=new ViewAllOrdersPage ();
+
         viewAllOrdersPage.editOrder.click ();
     }
 
     @When("User should fill Product Information and click Calculate.")
     public void user_should_fill_Product_Information_and_click_Calculate() {
-        ViewAllOrdersPage viewAllOrdersPage=new ViewAllOrdersPage ();
+
         Select s1=new Select ( viewAllOrdersPage.product );
         s1.selectByVisibleText ( "FamilyAlbum" );
         viewAllOrdersPage.quantity.clear ();
@@ -53,7 +55,7 @@ public class ViewAllOrdersPage_Step_Definition {
 
     @When("User should fill Address Information and Payment Information then click Reset button.")
     public void user_should_fill_Address_Information_and_Payment_Information_then_click_Reset_button() {
-        ViewAllOrdersPage viewAllOrdersPage=new ViewAllOrdersPage ();
+
         viewAllOrdersPage.customerName.clear ();
         viewAllOrdersPage.customerName.sendKeys ( "Michael Moore" );
         viewAllOrdersPage.street.clear ();
@@ -74,13 +76,13 @@ public class ViewAllOrdersPage_Step_Definition {
 
     @When("User should click CheckAll button.")
     public void user_should_click_CheckAll_button2() {
-        ViewAllOrdersPage viewAllOrdersPage=new ViewAllOrdersPage ();
+
         viewAllOrdersPage.checkAll.click ();
     }
 
     @Then("User should click Delete button")
     public void user_should_click_Delete_button() {
-        ViewAllOrdersPage viewAllOrdersPage=new ViewAllOrdersPage ();
+
         viewAllOrdersPage.deleteSelected.click ();
     }
 

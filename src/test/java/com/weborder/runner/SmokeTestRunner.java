@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
         features="src/test/resources/Features",
         glue="com/weborder/step_definition",
         dryRun =false,
+        strict = false,
         tags="@smoke_test",
         plugin= {
                 "html:target/default-report",

@@ -2,10 +2,12 @@ package com.weborder.pages;
 
 import com.weborder.utilities.BrowserUtilities;
 import com.weborder.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
@@ -19,14 +21,13 @@ public abstract class BasePage {
     @FindBy(xpath="//a[.='Logout']")
     public WebElement logOut;
 
+    @FindBy(tagName = "h2")
+    protected WebElement pageSubtitle;
 
-//    @FindBy(tagName = "h2")
-//    public WebElement pageSubtitle;
-
-//    public String getPageSubtitleText(){
-//        BrowserUtilities.waitForPageToLoad(10);
-//        return pageSubtitle.getText().trim();
-//    }
+    public String getPageSubtitleText() {
+        BrowserUtilities.waitForPageToLoad ( 10 );
+        return pageSubtitle.getText ().trim ();
+    }
 
     public String getPageLogoText() {
         return pageLogo.getText();
@@ -35,4 +36,9 @@ public abstract class BasePage {
     public BasePage() {
         PageFactory.initElements(driver, this);
     }
+    public void navigateTo(String menu) {
+        String locator = "//a[.='" + menu + "']";
+        wait.until( ExpectedConditions.presenceOfElementLocated( By.xpath(locator))).click();
+    }
+
 }
