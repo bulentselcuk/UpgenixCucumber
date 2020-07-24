@@ -11,7 +11,7 @@ public class Hooks {
 
     @Before
     public void setUp(){
-        System.out.println("Test setup");
+        System.out.println("Test STARTED");
         Driver.getDriver().manage().window().maximize();
         String URL = ConfigurationReader.getProperty("qa1");
         System.out.println("URL : " + URL);
@@ -26,6 +26,8 @@ public class Hooks {
             byte[] image = takesScreenshot.getScreenshotAs( OutputType.BYTES);
             //attach screenshot to the report
             scenario.embed(image, "image/png", scenario.getName());
+        }else{
+            System.out.println ("TEST PASSED");
         }
         System.out.println("Test Clean Up");
         Driver.closeDriver();

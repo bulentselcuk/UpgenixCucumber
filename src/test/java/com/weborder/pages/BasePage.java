@@ -16,6 +16,9 @@ public abstract class BasePage {
     @FindBy(tagName = "h1")
     public WebElement pageLogo;
 
+    @FindBy(xpath="//a[.='Logout']")
+    public WebElement logOut;
+
 
 //    @FindBy(tagName = "h2")
 //    public WebElement pageSubtitle;

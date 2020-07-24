@@ -4,6 +4,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class ViewAllOrdersPage extends BasePage{
+
+    @FindBy(xpath="//a[.='View all orders']")
+    public WebElement ViewAllOrder;
+
     @FindBy(id="ctl00_MainContent_btnCheckAll")
     public WebElement checkAll;
     @FindBy(xpath="//a[@id='ctl00_MainContent_btnUncheckAll']")

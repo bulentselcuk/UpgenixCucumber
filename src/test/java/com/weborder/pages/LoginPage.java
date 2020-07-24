@@ -14,6 +14,9 @@ public class LoginPage extends BasePage{
     @FindBy (id="ctl00_MainContent_login_button")
     public WebElement loginButton;
 
+    @FindBy(xpath="//a[.='Logout']")
+    public WebElement logOut;
+
 
     public void login (){
         String usernameValue =ConfigurationReader.getProperty ( "admin_username" );

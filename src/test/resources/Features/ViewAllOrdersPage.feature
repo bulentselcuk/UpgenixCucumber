@@ -1,4 +1,4 @@
-@VAO
+@View_all_order
 Feature: User should be able to organize View All Orders Page
 
   Scenario: Organize the View All Orders Page
