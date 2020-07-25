@@ -10,7 +10,6 @@ import org.junit.runner.RunWith;
         features="src/test/resources/Features",
         glue="com/weborder/step_definition",
         dryRun =false,
-        tags="@senario_outline",
         plugin= {
                 "html:target/default-report",
                 "json:target/cucumber.json",

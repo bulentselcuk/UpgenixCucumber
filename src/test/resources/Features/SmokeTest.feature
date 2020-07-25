@@ -1,9 +1,14 @@
 @smoke_test
 Feature: User should be able to click All Menu Items
 
-  Scenario: All Menu Items must work
+  Scenario Outline: All Menu Items must work
 
     Given User is on the login page
-    When User should click to all menu items
-    Then Verify all menu items and click logOut
+    When User click to "<Menu>" item
+    Then Verify "<Subtitle>"
 
+    Examples:
+      | Menu              | Subtitle           |
+      | View all orders   | List of All Orders |
+      | View all products | List of Products   |
+      | Order             | Order              |
